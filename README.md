@@ -1,7 +1,7 @@
 # Physics-informed-neural-networks-for-Options-price-prediction
 The price of European Call Options is predicted by using The Black-Scholes model. This is a PDE (partial differential equation) model where the option price $V$ is a function of two variables: the time $t$ and the stock price $S$, initial and boundary conditions are also part of the model.
 
-PDE: $\frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0, \quad 0 < t$
+PDE: $\frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0, \quad 0 < t < t_{max}, \quad 0 < S < S_{max}$
 
 Initial condition: $V(t=t_{max},S)=\max{\\{S-K,0}\\}$.
 
