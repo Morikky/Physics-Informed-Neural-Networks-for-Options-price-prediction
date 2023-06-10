@@ -3,7 +3,7 @@ The price of European Call Options is predicted by using The Black-Scholes model
 
 PDE: $\frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0$.
 
-Initial condition: $V(t=t_{max},S)=\max{\{S-K,0}\}$.
+Initial condition: $V(t=t_{max},S)=\max{/{S-K,0}/}$.
 
 Boundary condition: $V(t,S=0)=0, \quad V(t,S=S_{max})=S_{max}-Ke^{-r(t_{max}-t))}$.
 
