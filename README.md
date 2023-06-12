@@ -5,7 +5,7 @@ PDE: $\frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\p
 
 Initial condition: $V(t=t_{max},S)=\max{\\{S-K,0}\\}$
 
-Boundary condition: $V(t,S=0)=0, \quad V(t,S=S_{max})=S_{max}-Ke^{-r(t_{max}-t))}$
+Boundary condition: $V(t,S=0)=0, \quad V(t,S=S_{max})=S_{max}-Ke^{-r(t_{max}-t)}$
 
 
 Physics-informed neural networks (PINN) are used to numerically solve the PDE and the solution provides the predictions. The implementation is done using TensorFlow. It is not a standard neural network (NN) implementation, where the NN model is trained (and the loss function is minimized) by using labeled data. Instead, the PDE model is used to train the NN model. PINN involves random sampling of points from the domain of the variables (t and S), in this work random sampling is from a uniform distribution (more advanced sampling strategies might increase the accuracy of the predictions). Points are sampled from within the domain (called the residual points) and also from its boundaries (i.e., according to the boundary and initial conditions). The NN model is evaluated on the sampling points and is then differentiated (using automatic differentiation) according to the PDE. This allows to check how far the NN model is from satisfying the PDE (to construct a loss term) and to train the model.
